@@ -1,0 +1,138 @@
+.overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: #2A3540;
+	opacity: 0.5;
+	display: none;
+	z-index: 100;
+}
+
+.popup {
+	background: #FFFFFF;
+	border-radius: 4px;
+	padding: 40px;
+	max-width: 400px;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	opacity: 0;
+	transform: translate(-50%, -50%) scale(0);
+	transition: all ease-in-out .5s;
+	z-index: -1;
+
+	&-close {
+		font-size: 36px;
+		position: absolute;
+		top: 10px;
+		right: 25px;
+		color: #C7C7CC;
+		cursor: pointer;
+		user-select: none;
+	}
+
+	&__content {
+		h3 {
+			text-align: center;
+			@extend %rm;
+			font-size: 32px;
+			line-height: 110%;
+			color: #2A3540;
+			margin-bottom: 30px;
+		}
+	}
+
+	&__input {
+		position: relative;
+		margin-bottom: 20px;
+		&:not(:first-child) {
+			margin-bottom: 8px;
+		}
+		input {	
+			width: 312px;
+			height: 48px;
+			border: 1px solid #DEE4EB;
+			border-radius: 2px;
+			outline: none;
+			padding-left: 40px;
+			@extend %osr;
+			font-size: 16px;
+			line-height: 140%;
+			letter-spacing: 0.008em;
+			color: #999999;
+		}
+		label {
+			width: 40px;
+			text-align: center;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			svg {
+				width: 16px;
+				height: 16px;
+				stroke: #999999; 
+				stroke-linecap: round; 
+				stroke-linejoin: round;
+				fill: none;
+			}
+		}
+	}
+	&__forgot {
+		text-align: right;
+		a {
+			@extend %osr;
+			font-size: 12px;
+			line-height: 140%;
+			color: #2196F3;
+		}
+	}
+
+	button.sign {
+		margin-top: 30px;
+		width: 312px;
+		height: 48px;
+		border: none;
+		outline: none;
+		background: #12C78C;
+		border-radius: 4px;
+
+		@extend %rm;
+		font-size: 16px;
+		line-height: 110%;
+		text-align: center;
+		letter-spacing: 0.008em;
+		color: #FFFFFF;
+		cursor: pointer;
+	}
+
+	a.register {
+		display: block;
+		margin-top: 16px;
+		text-align: center;
+		background: rgba(179, 230, 255, .2);
+		border-radius: 4px;
+		width: 312px;
+		height: 48px;
+		line-height: 48px;
+		border: none;
+		outline: none;
+
+		@extend %osr;
+		font-size: 16px;
+		text-align: center;
+		letter-spacing: 0.008em;
+
+		color: #2196F3;
+		cursor: pointer;
+	}
+}
+
+.popup-active {
+	opacity: 1;
+	transform: translate(-50%, -50%) scale(1);
+	transition: all ease-in-out .5s;
+	z-index: 101;
+}

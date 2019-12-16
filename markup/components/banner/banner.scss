@@ -1,0 +1,16 @@
+.banner {
+	max-width: 1224px;
+	margin: 0 auto;
+	padding: 50px 0;
+	background-color: #F6FCFF;
+	&__image {
+		border-radius: 2px;
+		max-height: 240px;
+	}
+}
+
+@media (max-width: 1300px) and (min-width: 1024px) {
+	.banner__image img {
+		max-width: 100%;
+	}
+}

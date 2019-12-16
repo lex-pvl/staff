@@ -1,0 +1,28 @@
+.partners {
+	padding: 30px 0 100px 0;
+	background-color: #F6FCFF;
+	&__container {
+		max-width: 1224px;
+		margin: 0 auto;	
+	}
+	&__title {
+		h3 {
+			@extend %rm;
+			font-size: 20px;
+			line-height: 120%;
+			color: #2A3540;
+		}
+	}
+	&__images {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 34px;
+	}
+}
+
+@media (max-width: 1300px) and (min-width: 1024px) {
+	.partners__container {
+		max-width: 1000px;
+	}
+}
